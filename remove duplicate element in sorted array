@@ -1,0 +1,20 @@
+def remove_duplicate(arr):
+   new_arr = [0] * len(arr)
+   new_arr[0] = arr[0] 
+   n = len(arr)
+   x = 0
+   
+   for i in range(1,n):
+        if new_arr[x] != arr[i]:
+            x = x+1
+            new_arr[x] = arr[i]
+
+   return new_arr[:x+1]
+
+arr = [5, 5, 7, 8, 8, 9, 10, 10,11]
+print(remove_duplicate(arr))
+
+
+arr = [5, 5, 7, 8, 8, 9, 10, 10,11]
+unique = list(set(arr))
+print(unique)

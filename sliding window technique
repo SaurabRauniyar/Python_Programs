@@ -1,0 +1,20 @@
+def maxx_sum_subarray(arr, w):
+    n = len(arr)   
+    current = 0
+
+    for i in range (0, n - w + 1):
+        current += arr[i]
+
+    maxx = current
+
+    for i in range(1, n - w + 1 ):
+        current = current - arr[i-1] + arr[i + w -1]
+        if (current >maxx):
+            maxx = current
+    
+    return maxx
+
+
+arr = [3, 8, 2, 5, 7, 6, 12] 
+w = 4
+print(maxx_sum_subarray(arr, w)) 
